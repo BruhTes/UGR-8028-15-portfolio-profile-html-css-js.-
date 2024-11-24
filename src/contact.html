@@ -3,9 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icofont/1.0.1/css/icofont.min.css">
+    <title>Contact</title>
 </head>
 <body>
-    
+
+    <header>
+        <div>
+            <h1><a href="index.html">Biruh Tesfahun</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><span>Home</span></a></li>
+                    <li><a href="about.html"><span>About</span></a></li>
+                    <li><a href="education.html"><span>Education</span></a></li>
+                    <li><a href="projects.html"><span>Projects</span></a></li>
+                    <li><a href="contact.html"><span>Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <div>
+            <div>
+                <h2>Contact</h2>
+            </div>
+
+            <div>
+                <div>
+                    <i class="bx bx-share-alt"></i>
+                    <h3>Social Profiles</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="mailto:bruhtesfahun21129@gmail.com" target="_blank">
+                                    <img src="images/google.svg" alt="Google" width="30" height="30">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/br-tes-ab58162a6/" target="_blank">
+                                    <img src="images/linkedin.svg" alt="LinkedIn" width="30" height="30">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/BruhTes" target="_blank">
+                                    <img src="images/github.svg" alt="GitHub" width="30" height="30">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://leetcode.com/u/bruhtes/" target="_blank">
+                                    <img src="images/leetcode.svg" alt="LeetCode" width="30" height="30">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <i class="bx bx-envelope"></i>
+                <h3>Email</h3>
+                <a href="mailto:bruhtesfahun21129@gmail.com" target="_blank">
+                    <p>
+                        <i class="icofont-rounded-right"></i> bruhtesfahun21129@gmail.com
+                    </p>
+                </a>
+            </div>
+
+            <form action="#" method="post">
+                <div>
+                    <div>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+                <div>
+                    <textarea name="message" rows="8" placeholder="Message" required></textarea>
+                </div>
+                <div>
+                    <div class="loading">Loading...</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
 </body>
 </html>
