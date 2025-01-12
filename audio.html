@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Audio Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #0e1b2a; /* Dark background */
+            color: #00aaff; /* Blue accent color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .custom-audio-player {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #0b1622; /* Darker panel background */
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: #00aaff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button i {
+            transition: color 0.3s;
+        }
+
+        button:hover i {
+            color: #0088cc;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: #1c2e47; /* Slider background */
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00aaff;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 170, 255, 0.8);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00aaff;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 170, 255, 0.8);
+        }
+
+        span {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-audio-player">
+        <audio id="audio-player" src="src/audio/audio.mp3"></audio>
+        <button id="play-pause-btn" type="button">
+            <i class="fas fa-play"></i>
+        </button>
+        <input id="seek-slider" type="range" min="0" max="100" value="0" />
+        <span id="current-time">00:00</span> / <span id="duration">00:00</span>
+        <button id="volume-btn" type="button">
+            <i class="fas fa-volume-up"></i>
+        </button>
+        <input id="volume-slider" type="range" min="0" max="1" step="0.1" value="1" />
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playPauseIcon = playPauseBtn.querySelector('i');
+        const seekSlider = document.getElementById('seek-slider');
+        const currentTimeElem = document.getElementById('current-time');
+        const durationElem = document.getElementById('duration');
+        const volumeBtn = document.getElementById('volume-btn');
+        const volumeIcon = volumeBtn.querySelector('i');
+        const volumeSlider = document.getElementById('volume-slider');
+
+        // Format time in mm:ss
+        const formatTime = (time) => {
+            const minutes = Math.floor(time / 60).toString().padStart(2, '0');
+            const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+            return `${minutes}:${seconds}`;
+        };
+
+        // Toggle play/pause
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseIcon.classList.replace('fa-play', 'fa-pause');
+            } else {
+                audio.pause();
+                playPauseIcon.classList.replace('fa-pause', 'fa-play');
+            }
+        });
+
+        // Update seek slider and current time
+        audio.addEventListener('timeupdate', () => {
+            seekSlider.value = (audio.currentTime / audio.duration) * 100 || 0;
+            currentTimeElem.textContent = formatTime(audio.currentTime);
+        });
+
+        // Update audio current time on seek
+        seekSlider.addEventListener('input', () => {
+            audio.currentTime = (seekSlider.value / 100) * audio.duration;
+        });
+
+        // Display duration when metadata is loaded
+        audio.addEventListener('loadedmetadata', () => {
+            durationElem.textContent = formatTime(audio.duration);
+        });
+
+        // Toggle mute/unmute
+        volumeBtn.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+            volumeIcon.className = audio.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+        });
+
+        // Update audio volume
+        volumeSlider.addEventListener('input', () => {
+            audio.volume = volumeSlider.value;
+            audio.muted = volumeSlider.value === "0";
+            volumeIcon.className = audio.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+        });
+    </script>
+</body>
+</html>
