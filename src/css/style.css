@@ -1008,15 +1008,14 @@ Education
       width: 100%;
   }
   
-  /* Keep skills grid 3x3 but resize */
   .skills-grid {
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.5rem;  /* Reduced gap */
+      gap: 0.5rem;  
   }
 
   .skills-grid span {
-      padding: 0.5rem 0.75rem;  /* Smaller padding */
-      font-size: 0.875rem;      /* Smaller font size */
+      padding: 0.5rem 0.75rem;  
+      font-size: 0.875rem;      
   }
   
   .certifications-grid span {
@@ -1028,8 +1027,8 @@ Education
 @media (max-width: 480px) {
   /* Keep skills grid 3x3 but make even smaller */
   .skills-grid span {
-      padding: 0.4rem 0.5rem;   /* Even smaller padding */
-      font-size: 0.75rem;       /* Even smaller font size */
+      padding: 0.4rem 0.5rem;  
+      font-size: 0.75rem;      
   }
   
   .certifications-grid span {
@@ -1222,15 +1221,6 @@ Projects
   -webkit-text-fill-color: transparent;
 }
 
-  /* Add more spacing between card and project number */
-  /* .project:nth-child(odd) {
-      padding-right: 4rem;
-  }
-
-  .project:nth-child(even) {
-      padding-left: 4rem;
-  } */
-
   /* Style the project link */
   .project a {
       color: #64ffda;
@@ -1257,6 +1247,72 @@ Projects
   .project {
       width: 100%;
       min-height: 300px;
+  }
+}
+
+/* Tablet Portrait and Landscape (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #projects {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 2rem;
+      padding: 2rem;
+      -webkit-overflow-scrolling: touch;
+      padding-left: 2rem; /* Add explicit left padding to show first article */
+  }
+
+  .project {
+      min-width: 280px; /* Smaller minimum width */
+      width: 45%; /* Reduced from 60% */
+      flex: 0 0 auto;
+      margin: 0;
+      min-height: 300px; /* Reduced height */
+  }
+
+  .project img,
+  .project video {
+      height: 160px; /* Reduced image height */
+  }
+
+  .project h2 {
+      font-size: 1.1rem; /* Slightly smaller title */
+  }
+
+  .project p {
+      font-size: 0.9rem; /* Slightly smaller text */
+  }
+}
+
+/* Mobile (under 768px) */
+@media (max-width: 767px) {
+  #projects {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 1rem;
+      -webkit-overflow-scrolling: touch;
+      padding-left: 1rem; /* Add explicit left padding to show first article */
+  }
+
+  .project {
+      min-width: 250px; /* Even smaller minimum width for mobile */
+      width: 80%; /* Adjusted width */
+      flex: 0 0 auto;
+      margin: 0;
+      min-height: 280px; /* Reduced height */
+  }
+
+  .project img,
+  .project video {
+      height: 140px; /* Smaller images for mobile */
+  }
+
+  .project h2 {
+      font-size: 1rem;
+  }
+
+  .project p {
+      font-size: 0.85rem;
   }
 }
 
@@ -1398,7 +1454,7 @@ h3 {
       cursor: pointer;
       font-size: 16px;
       transition: background-color 0.3s ease;
-      display: inline-block; /* This ensures the button takes only necessary width */
+      display: inline-block; 
   }
   
   .submit-btn:hover {
