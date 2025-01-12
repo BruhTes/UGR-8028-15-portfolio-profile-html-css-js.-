@@ -10,6 +10,7 @@
 
 <script src="src/js/typewriter.js"></script>
 <script src="src/js/dropdown.js"></script>
+<script src="src/js/audioplayer.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', init);
 
@@ -27,7 +28,7 @@
 
 <video class="background-video" src="src/videos/binary_rain.mp4" muted="" loop="" autoplay=""></video>
 
-<button type="button">
+<button id="button1" type="button">
     <i class="fas fa-bars"></i>
 </button>
 
@@ -72,7 +73,7 @@
     </div>
 </header>
 
-<!-- <div class="custom-audio-player">
+<div class="custom-audio-player">
     <audio id="audio-player" src="src/audio/audio.mp3"></audio>
     <button id="play-pause-btn" type="button">
         <i class="fas fa-play"></i>
@@ -83,7 +84,7 @@
         <i class="fas fa-volume-up"></i>
     </button>
     <input id="volume-slider" type="range" min="0" max="1" step="0.1" value="1" />
-</div> -->
+</div>
 
 
 </body>
