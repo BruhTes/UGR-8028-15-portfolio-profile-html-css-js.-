@@ -3,32 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <title>Home</title>
 </head>
+
+<script src="js/typewriter.js"></script>
+<script src="js/dropdown.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', init);
+
+    function init() {
+        const txtElement = document.querySelector('.txt-type');
+        const words = JSON.parse(txtElement.getAttribute('data-words'));
+        const wait = txtElement.getAttribute('data-wait');
+        
+        // Init TypeWriter
+        new TypeWriter(txtElement, words, wait);
+    }
+</script>
+
 <body>
 
-    <video src="videos/binary_rain.mp4" autoplay muted></video>
+<video class="background-video" src="videos/binary_rain.mp4" muted="" loop="" autoplay=""></video>
 
-    <button type="button">
-        <i class="fas fa-bars"></i>
-    </button>
+<button type="button">
+    <i class="fas fa-bars"></i>
+</button>
 
-    <header>
-        <div>
-            <h1><a href="index.html">Biruh Tesfahun</a></h1>
-            <h2>I am incoming <span>Software Engineer</span><span>|</span></h2>
-            <nav>
-                <ul>
-                    <li><a href="index.html"><span>Home</span></a></li>
-                    <li><a href="about.html"> <span>About</span></a></li>
-                    <li><a href="education.html"> <span>Education</span></a></li>
-                    <li><a href="projects.html"> <span>Projects</span></a></li>
-                    <li><a href="contact.html"> <span>Contact</span></a></li>
-                </ul>
-            </nav>
-        </div>
+<header id="home_header">
+    <div class="home_container">
+        <h1><a href="index.html">Biruh Tesfahun</a></h1>
+        <h2>I am incoming <span class="txt-type" data-wait="3000" data-words='["Software Engineer", "Problem Solver", "Web Developer"]'></span><span class="cursor">|</span></h2>
+        <nav class="home-nav-menu">
+            <ul>
+                <li class = "active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-        <div>
+        <div class="social-links">
             <ul>
                 <li>
                     <a href="mailto:bruhtesfahun21129@gmail.com" target="_blank">
@@ -52,14 +69,22 @@
                 </li>
             </ul>
         </div>
-    </header>
-
-    <div>
-        <audio controls>
-            <source src="audio/audio.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
     </div>
+</header>
+
+<!-- <div class="custom-audio-player">
+    <audio id="audio-player" src="audio/audio.mp3"></audio>
+    <button id="play-pause-btn" type="button">
+        <i class="fas fa-play"></i>
+    </button>
+    <input id="seek-slider" type="range" min="0" max="100" value="0" />
+    <span id="current-time">00:00</span> / <span id="duration">00:00</span>
+    <button id="volume-btn" type="button">
+        <i class="fas fa-volume-up"></i>
+    </button>
+    <input id="volume-slider" type="range" min="0" max="1" step="0.1" value="1" />
+</div> -->
+
 
 </body>
 </html>
