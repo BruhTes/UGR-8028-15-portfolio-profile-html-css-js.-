@@ -3,122 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
+
+<script src="js/dropdown.js"></script>
+
 <body>
-    <header>
-        <div>
+    <header class="_header">
+        <div class="_header_container">
             <h1><a href="index.html">Biruh Tesfahun</a></h1>
             <nav>
                 <ul>
                     <li><a href="index.html"><span>Home</span></a></li>
-                    <li><a href="about.html"> <span>About</span></a></li>
-                    <li><a href="education.html"> <span>Education</span></a></li>
-                    <li><a href="projects.html"> <span>Projects</span></a></li>
-                    <li><a href="contact.html"> <span>Contact</span></a></li>
+                    <li><a href="about.html"><span>About</span></a></li>
+                    <li class="active"><a href="education.html"><span>Education</span></a></li>
+                    <li><a href="projects.html"><span>Projects</span></a></li>
+                    <li><a href="contact.html"><span>Contact</span></a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <button type="button">
+        <i class="fas fa-bars"></i>
+    </button>
+    
     <main>
-        <section>
-            <!-- Introduction -->
-            <header>
-                <h2>Educational BackGround</h2>
-            </header>
-            <p>
-                Hi, I am Biruh Tesfahun, a passionate software engineer specializing in web development, cloud computing, and data analysis.
-            </p>
-    
-            <!-- Featured Content -->
-            <article>
-                <h3>About My Journey</h3>
-                <p>
-                    2019 - 2022 <br>
-                    HIGH SCHOOL - SAINT JOHN
-                    BAPTIST DE LA SALLE <br>
-                    2023 - present <br>
-                    ADDIS ABABA UNIVERSITY <br>
-                    Bachelor of Software Engineering <br>
-                    <br>
-                    I started my main coding journey in 2023, focusing on core programming concepts using python. Then I proceeded to Java to learn OOP concepts and DSA. Currently I am learning Full Stack Web Development.
+        <div class="section-title">
+            <h2>Education</h2>
+        </div>
+
+        <div  class="main-container">
+            <div class="education-section">
+                <!-- Introduction -->
+                <header class="education-header">
+                    <h2>Educational Background</h2>
+                </header>
+                <p class="education-intro">
+                    Hi, I am Biruh Tesfahun, a passionate software engineer specializing in web development, cloud computing, and data analysis.
                 </p>
-            </article>
-        </section>
-
-        <aside>
-            <!-- Section Header -->
-            <header>
-                <h2>Skills and Certifications</h2>
-            </header>
-    
-            <!-- Skills Table -->
-            <section>
-                <h3>Skills</h3>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>HTML</td>
-                            <td>Python</td>
-                            <td>React</td>
-                        </tr>
-                        <tr>
-                            <td>CSS</td>
-                            <td>Java</td>
-                            <td>Node.js</td>
-                        </tr>
-                        <tr>
-                            <td>JavaScript</td>
-                            <td>MySQL</td>
-                            <td>Thilwind and Bootstrap</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </section>
-    
-            <!-- Certifications Table -->
-            <section>
-                <h3>Certifications</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Python Essentials (PE1 and PE2)</td>
-                            <td>Azure Adminstrator</td>
-                            <td>meta front-end developer Coursera</td>
-                        </tr>
-                    </thead>
-                </table>
-                <!-- Download CV Button -->
-                <div>
-                    <a href="#" download="BiruhTesfahun_CV.pdf">
-                        Download Resume
-                    </a>
-                </div>
-            </section>
-        </aside>
+        
+                <!-- Featured Content -->
+                <article class="education-journey">
+                    <h3>About My Journey</h3>
+                    <p>
+                        <span>2019 - 2022</span> <br>
+                        HIGH SCHOOL - SAINT JOHN BAPTIST DE LA SALLE <br>
+                        <span>2023 - present</span> <br>
+                        ADDIS ABABA UNIVERSITY <br>
+                        Bachelor of Software Engineering <br>
+                        <br>
+                        I started my main coding journey in 2023, focusing on core programming concepts using Python. Then I proceeded to Java to learn OOP concepts and DSA. Currently, I am learning Full Stack Web Development.
+                    </p>
+                </article>
+            </div>
+            
+            <div>
+                <aside class="skills-certifications">
+                    <!-- Section Header -->
+                    <header class="skills-header">
+                        <h2>Skills and Certifications</h2>
+                    </header>
+            
+                    <!-- Skills Section -->
+                    <section class="skills-section">
+                        <h3>Skills</h3>
+                        <div class="skills-grid">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                            <span>MySQL</span>
+                            <span>React</span>
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>Tailwind</span>
+                        </div>
+                    </section>
+            
+                    <!-- Certifications Section -->
+                    <section class="certifications-section">
+                        <h3>Certifications</h3>
+                        <div class="certifications-grid">
+                            <span>Python Essentials Cisco</span>
+                            <span>Azure Administrator</span>
+                            <span>Meta Front-End Developer</span>
+                        </div>
+            
+                        <!-- Download CV Button -->
+                        <div class="download-cv">
+                            <a href="#" download="BiruhTesfahun_CV.pdf">Download CV</a>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
     </main>
-    
-    
-    <div><a href="https://app.enhancv.com/share/ae8f1e1a/?utm_medium=growth&amp;utm_campaign=share-resume&amp;utm_source=dynamic" target="_blank" class="resume-btn">Resume</a></div>
 
     <footer>
         <div>
             <ul>
                 <li>
                     <a href="mailto:bruhtesfahun21129@gmail.com" target="_blank">
-                        <img src="images/google.svg" alt="Google"  width="30" height="30">
+                        <img src="images/google.svg" alt="Google" width="30" height="30">
                     </a>
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/br-tes-ab58162a6/" target="_blank">
-                        <img src="images/linkedin.svg" alt="LinkedIn"  width="30" height="30">
+                        <img src="images/linkedin.svg" alt="LinkedIn" width="30" height="30">
                     </a>
                 </li>
                 <li>
                     <a href="https://github.com/BruhTes" target="_blank">
-                        <img src="images/github.svg" alt="GitHub"  width="30" height="30">
+                        <img src="images/github.svg" alt="GitHub" width="30" height="30">
                     </a>
                 </li>
                 <li>
@@ -128,8 +127,8 @@
                 </li>
             </ul>
         </div>
-    
         <p>&copy; 2024 Biruh Tesfahun. All rights reserved.</p>
-      </footer>
+    </footer>
+    
 </body>
 </html>
