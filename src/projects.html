@@ -3,77 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <title>Projects</title>
-
 </head>
 <body>
-
-  <header>
-    <div>
+  <header class="_header">
+    <div class="_header_container">
         <h1><a href="index.html">Biruh Tesfahun</a></h1>
         <nav>
             <ul>
                 <li><a href="index.html"><span>Home</span></a></li>
-                <li><a href="about.html"> <span>About</span></a></li>
-                <li><a href="education.html"> <span>Education</span></a></li>
-                <li><a href="projects.html"> <span>Projects</span></a></li>
-                <li><a href="contact.html"> <span>Contact</span></a></li>
+                <li><a href="about.html"><span>About</span></a></li>
+                <li><a href="education.html"><span>Education</span></a></li>
+                <li class="active"><a href="projects.html"><span>Projects</span></a></li>
+                <li><a href="contact.html"><span>Contact</span></a></li>
             </ul>
         </nav>
     </div>
-  </header>
-  
+</header>
+
+<button type="button">
+  <i class="fas fa-bars"></i>
+</button>
+
   <main>
-
-    <h1>Projects</h1>
-    <section>
-
+    <div class="section-title">
+      <h2>Projects</h2>
+    </div>
+    
+    <section id="projects">
       <!-- Project 1 -->
-      <article>
-        <img src="images/project1.JPG" height="100" width="200" alt="Project 1 Image">
+      <article class="project">
+        <img src="images/project1.png" height="100" width="200" alt="Project 1 Image">
         <h2>QR-code Generator</h2>
         <p>A simple QR-code generator using HTML, CSS, and JavaScript. Simply paste a URL or a text to generate Qr codes</p>
         <a href="https://github.com/BruhTes/QRCODE">Project link</a>
       </article>
-
+    
       <!-- Project 2 -->
-      <article>
-        <video src="videos/project2.mp4" width="150" height="150"></video>
+      <article class="project">
+        <img src="images/project2.jpg" width="150" height="150"></img>
         <h2>Python Truth Table Generator</h2>
         <p>A python program that generates truth table and Canonical forms (Sum of Products and Product of Sums) for any logical expression</p>
         <a href="https://github.com/BruhTes/Truth-Table">Project Link</a>
       </article>
-
+    
       <!-- Project 3 -->
-      <article>
-        <img src="project3.png" alt="Project 3 Image">
-        <h2>Database System for Mahibere Kidusan Bookshop
-            and Library</h2>
+      <article class="project">
+        <img src="images/project3.JPG" alt="Project 3 Image">
+        <h2>Database System for Mahibere Kidusan Bookshop and Library</h2>
         <p>Used MySQL, SQL Queries, ER Diagrams <br>
-        Designed and implemented a database to manage inventory member data, and borrowing history</p>
+          Designed and implemented a database to manage inventory member data, and borrowing history</p>
         <a href="https://github.com/BruhTes/BookShopDatabase">Project link</a>
       </article>
-
+    
       <!-- Project 4 -->
-      <article>
-        <video src="videos/project4.mp4" width="150" height="150"></video>
-        <h2>Advanced TicTacToe Game</h2>
-        <p>Developed a TicTacToe game with advanced features like
-            move validation, undo functionality, and checkmate
-            detection using different Data Structures and Algorithms.
+      <article class="project">
+        <img src="images/project5.JPG" width="150" height="150"></img>
+        <h2>EMR System for Hospitals</h2>
+        <p>web based system to securely manage and
+          share patient records across hospital branches
         </p>
         <a href="https://github.com/BruhTes/Tic-Tac-Toe">Project link</a>
       </article>
-
+    
       <!-- Project 5 -->
-      <article>
-        <img src="project5.png" alt="Project 5 image">
+      <article class="project">
+        <img src="images/project5.png" alt="Project 5 image">
         <h2>To Do List App using HTML, CSS, and JavaScript.</h2>
         <p>The Project Contains: Insert option / Add List, Delete list, clear all list, Display number of pending tasks, Fully Responsive for all devices</p>
         <a href="https://github.com/BruhTes/TodoListHCJS">Project link</a>
       </article>
-
     </section>
+    
   </main>
 
   <footer>
@@ -81,17 +84,17 @@
         <ul>
             <li>
                 <a href="mailto:bruhtesfahun21129@gmail.com" target="_blank">
-                    <img src="images/google.svg" alt="Google"  width="30" height="30">
+                    <img src="images/google.svg" alt="Google" width="30" height="30">
                 </a>
             </li>
             <li>
                 <a href="https://www.linkedin.com/in/br-tes-ab58162a6/" target="_blank">
-                    <img src="images/linkedin.svg" alt="LinkedIn"  width="30" height="30">
+                    <img src="images/linkedin.svg" alt="LinkedIn" width="30" height="30">
                 </a>
             </li>
             <li>
                 <a href="https://github.com/BruhTes" target="_blank">
-                    <img src="images/github.svg" alt="GitHub"  width="30" height="30">
+                    <img src="images/github.svg" alt="GitHub" width="30" height="30">
                 </a>
             </li>
             <li>
@@ -101,8 +104,10 @@
             </li>
         </ul>
     </div>
-
     <p>&copy; 2024 Biruh Tesfahun. All rights reserved.</p>
-  </footer>
+</footer>
+
 </body>
+
+<script src="js/dropdown.js"></script>
 </html>
